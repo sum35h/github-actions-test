@@ -6,12 +6,18 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: print "Hello World!"
-      - name: multiline script
+      - name: Ubuntu Version Details
+        run: cat /etc/*release*
+      - name: Tool versions
         run: |
           node -v
           npm -v
+          python -v
+      - name: python cmd> processor
+        run:
+          import platform
+          print(platform.processor())
+        shell: python
           
 
 
